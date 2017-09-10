@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+        <script src="images-grid.js"></script>
+        <link rel="stylesheet" href="images-grid.css">
+
+        <style>
+        body { background-color:#fafafa;}
+            p {
+                text-align: center;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+            h1 { text-align:center; margin-top:50px;}
+            .loading {
+                background: url(img/loading.gif) center no-repeat;
+                background-size: 64px 64px;
+                height: 64px;
+                width: 64px;
+                clear: both;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="gallery1"></div>
+
+        <script>
+
+            var images = [
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/5vYrg4nAEIwwG5TeFei5qIrccN2uNB0peq7HB4SHkHeIMCXDhipkd2kxPcmej3rI_images.jpg',
+                'https://unsplash.it/660/440?image=875',
+                {
+                    src: 'https://api.p3fy.com/api/containers/nextgen-objects/download/MXkGLGbr7qGNbpqIn83SWk1nmupk6c8klnOG7Je3LNWHbsd9g6wuhA01qAJZdOyp_kiwork.jpg',
+                    caption: 'Supercar'
+                },
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/zoGJEXryVAdSvLyjGHZC5r2cfvLqrihOHn0yuh7RuPKyCxysPPbvVgfM4dOJ2nEh_img6304.jpg',
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/nJkfOeiOS1zd6OEiERF7KNUDFk61oHAhD3B5ikRHtTN5rIRiIAI3Pg9fXhf7E2x4_img3812.jpg',
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/DetDsN4sxXlltcIPIOayFfFYvSReOxWBMkvSQrwSzCbRjPtOSyDvH2UUCRoHlpfy_fgw.jpg',
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/luJNxmdWnVDS8PeIOw0Bw3KztUF3orMxQzFqHiKCkjjKQ5PaDCkuRATpiTafW6zx_dsc085500.jpg',
+                'https://api.p3fy.com/api/containers/nextgen-objects/download/8dnMm2uJTC7XliEhFmxWm2DiWE8bcHZ8HiFaA9235qnjs32KEEzCf4C0CK4qoUGp_teachertraining.jpg',
+                'https://unsplash.it/660/990?image=874',
+                'https://unsplash.it/660/440?image=872',
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/660/990?image=839',
+                'https://unsplash.it/660/455?image=838',
+            ];
+
+            $(function() {
+
+                $('#gallery1').imagesGrid({
+                    images: images,
+                    align: true,
+                    cells: 4
+                });
+                
+                // $('#gallery7').imagesGrid({
+                //     images: [
+                //         'https://unsplash.it/660/440?image=875',
+                //         {
+                //             src: 'https://api.p3fy.com/api/containers/nextgen-objects/download/MXkGLGbr7qGNbpqIn83SWk1nmupk6c8klnOG7Je3LNWHbsd9g6wuhA01qAJZdOyp_kiwork.jpg',      // url
+                //             alt: 'Car',          // alternative text
+                //             title: 'This is title',        // title
+                //             caption: 'Supercar'
+                //         },
+                //         'https://unsplash.it/660/990?image=874',
+                //         'https://unsplash.it/660/440?image=872',
+                //         'https://unsplash.it/750/500?image=868',
+                //         'https://unsplash.it/660/990?image=839',
+                //         'https://unsplash.it/660/455?image=838',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/zoGJEXryVAdSvLyjGHZC5r2cfvLqrihOHn0yuh7RuPKyCxysPPbvVgfM4dOJ2nEh_img6304.jpg',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/nJkfOeiOS1zd6OEiERF7KNUDFk61oHAhD3B5ikRHtTN5rIRiIAI3Pg9fXhf7E2x4_img3812.jpg',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/DetDsN4sxXlltcIPIOayFfFYvSReOxWBMkvSQrwSzCbRjPtOSyDvH2UUCRoHlpfy_fgw.jpg',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/luJNxmdWnVDS8PeIOw0Bw3KztUF3orMxQzFqHiKCkjjKQ5PaDCkuRATpiTafW6zx_dsc085500.jpg',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/5vYrg4nAEIwwG5TeFei5qIrccN2uNB0peq7HB4SHkHeIMCXDhipkd2kxPcmej3rI_images.jpg',
+                //         'https://api.p3fy.com/api/containers/nextgen-objects/download/8dnMm2uJTC7XliEhFmxWm2DiWE8bcHZ8HiFaA9235qnjs32KEEzCf4C0CK4qoUGp_teachertraining.jpg'
+                //     ],
+                //     align: true,
+                //     getViewAllText: function(imgsCount) { return 'View all' }
+                // });
+
+            });
+
+        </script>
+    </body>
+</html>
