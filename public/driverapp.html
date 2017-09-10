@@ -117,28 +117,49 @@
 <body>
                 <div class="container">
                     <h1 id= "checking"> </h1>
-                    <div class="row">
                         <button id="refresh" onclick = "refreshfunction()"> Refresh </button>
-                        <div class="col-md-12">
-                            <div class="card-box equal-height">
+                    <div class="row">
+                         <div class="col-md-4">
                                 <font size='3'>
-                                    <table id="download-table1" class="display table-bordered table-striped" width="100%">
+                                    <table id="download-table" class="display table-bordered table-striped">
                                         <thead>
                                             <th>Waiting</th>
-                                            <th>Ongoing</th>
-                                            <th>Complete</th>
                                         </thead>
-                                        <tbody id="maintable3">
+                                        <tbody id="maintable">
                                         </tbody>
                                     </table>
                                 </font>
                             </div>
-                        </div>
+                     </div>
+                        <div class="row">
+                         <div class="col-md-4">
+                                <font size='3'>
+                                    <table id="download-table" class="display table-bordered table-striped">
+                                        <thead>
+                                            <th>Ongoing</th>
+                                        </thead>
+                                        <tbody id="maintable1">
+                                        </tbody>
+                                    </table>
+                                </font>
+                            </div>
+                     </div> 
+                     <div class="row">
+                         <div class="col-md-4">
+                                <font size='3'>
+                                    <table id="download-table" class="display table-bordered table-striped">
+                                        <thead>
+                                            <th>Completed</th>
+                                        </thead>
+                                        <tbody id="maintable2">
+                                        </tbody>
+                                    </table>
+                                </font>
+                            </div>
                      </div>
                             <!-- End content-page -->
             </div>
             <!-- content -->
-        </div>
         <!-- End content-page -->
     </div>
     <!-- END wrapper -->

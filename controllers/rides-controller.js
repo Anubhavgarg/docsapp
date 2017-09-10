@@ -111,12 +111,12 @@ function _serveRide(req, res, next) {
                 .then(function (ride) {
                         var assigned_driver_id = ride.get("driver_id");
                         if (assigned_driver_id) {
-                            errorUtility.throwError("Ride is already assigned to a driver", 400);
+                            errorUtility.throwError("Ride No Longer Available", 400);
                         }
                         return Driver.findById(driver_id, {transacting: trx}).then(function (driver) {
                             var ride_id = driver.get("current_ride_id");
                             if (ride_id) {
-                                errorUtility.throwError("Driver is currently handling some other ride", 400);
+                                errorUtility.throwError("Current Driver is currently handling some other ride", 400);
                             }
                             ride.set("driver_id", driver.id);
                             ride.set("trip_start_time", new Date());
